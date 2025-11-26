@@ -1,0 +1,42 @@
+{
+  "Muice_style_train": {
+    "file_name": "Muice_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system"
+    }
+  },
+  "Ayaka_style_train": {
+    "file_name": "Ayaka_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system"
+    }
+  },
+  "Zhongli_style_train": {
+    "file_name": "Zhongli_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system"
+    }
+  },
+  "Hutao_style_train": {
+    "file_name": "Hutao_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system"
+    }
+  },
+  "Haruhi_style_train": {
+    "file_name": "Haruhi_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system"
+    }
+  }
+}
