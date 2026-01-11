@@ -95,8 +95,9 @@ Please create a `.env` file in the root directory `OtakuLab/` with the following
 ```ini
 # API Keys for Data Generation & Baselines
 OPENAI_API_KEY="sk-..."       # Compatible with OpenAI SDK (e.g., DeepSeek, Qwen)
+OPENAI_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
+OPENAI_CHAT_MODEL="glm-4"     # Model name to use for generation (e.g., glm-4, qwen-turbo)
 HANLP_API_KEY="..."           # HanLP Auth Key for PCFG parsing
-NEUTRAL_MODEL="glm-4"         # Model name to use for generation (e.g., glm-4, qwen-turbo)
 ```
 
 > **Note**: HanLP is used for constructing syntactic vectors (PCFG). You can obtain a key from [HanLP](https://hanlp.hankcs.com/).
