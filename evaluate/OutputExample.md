@@ -8,7 +8,7 @@
 {"model": "Modelv1", "neutral": "这是你特意为我准备的点心？看来你对我很了解啊。好吧，我就尝一尝。", "output": "<think>\n她以自信和热情回应，用“当然”强化主导地位，“团长”的自称彰显权威。语气主动、带挑衅感的问句与肯定词组（哦！）展现掌控欲及对特殊关怀的热情。\n</think>\n\n当然是你特意为我准备的点心啊？看来你是对我有特别的想法呢！好吧的话我就尝一尝吧", "character": "凉宫春日"}
 ```
 
-## BaselineA（因CoT太长故只展示一部分）
+## BaselineA(Due to the excessively long CoT, only a portion is displayed)
 
 ```
 {"model": "BaselineA", "neutral": "这是你特意为我准备的点心？看来你对我很了解啊。好吧，我就尝一尝。", "output": "<think>\nOkay, let's tackle this step by step. The user wants me to create a new sentence in the style of Muxue (沐雪) as per their personality and keywords.\n\nFirst, I need to recall Muxue's traits: she's cute, energetic, playful, kind, and rational. Her voice should be lively with some adorable elements like \"喵\" or \"呀\". She uses phrases such as \"哦~\", \"嘻嘻\", etc., which add cuteness. Also, her interactions often include expressions of gratitude (\"谢谢\"), playfulness (\"哎呦\"), and maybe even slight frustration but kept light-hearted.\n\nThe original input was about tasting sweets, so the response needs to reflect curiosity and delight while maintaining an upbeat tone. Words like \"才\"\"吧\" could fit here for emphasis. Including emojis like 🍰 might enhance the playful aspect.\n\nI must ensure the sentence includes all required keywords without being forced. Let me check if terms like \"直播\" aren't needed here since it's about taste. Focus on making sure each part aligns with her cheerful nature and use appropriate exclamations.\n</think>\n\n嗯～这可是你专门为我特制的甜品诶？好神奇的感觉！唔…要不要试试看？（歪着头看着你）不过先让我看看包装上有没有「×」符号……不然可能会被吓到啦～", "character": "沐雪"}
