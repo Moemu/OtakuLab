@@ -10,4 +10,15 @@ wheels/
 .venv
 
 .env
-outputs
+
+# Hosted on HuggingFace
+# Large Output Files
+outputs/tokens/
+outputs/cons/psydc.json
+
+# Model Weights 
+outputs/Vanilla
+outputs/style-classifier/
+outputs/Per-Character/
+outputs/model/
+outputs/DimensionDissolution/styled-qwen-*
