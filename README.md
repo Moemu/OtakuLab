@@ -22,7 +22,7 @@ OtakuLab/
 
 ## Outputs & Models
 
-Due to file size limits, large model weights (e.g., `outputs/model/styled-qwen`) are not included in this repo. Please refer to `outputs/README_OUTPUTS.md` for download links from Hugging Face / ModelScope.
+Due to file size limits, large model weights (e.g., `outputs/model/styled-qwen`) are not included in this repo. Please refer to `outputs/README_OUTPUTS.md` for download links from Hugging Face.
 
 ## Environmental Setup
 
