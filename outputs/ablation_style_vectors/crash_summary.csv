@@ -1,0 +1,5 @@
+model,empty (%),repetitive (%),length_anomaly (%),exception (%),any_crash (%),n
+Full_V2,0.0,0.0,0.0,0.0,0.0,750
+w/o_Lexical,0.0,0.0,0.0,0.0,0.0,750
+w/o_Pragmatic,0.0,0.0,0.0,0.0,0.0,750
+w/o_Syntactic,0.0,0.0,0.13,0.0,0.13,750

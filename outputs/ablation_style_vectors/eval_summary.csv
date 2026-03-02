@@ -1,0 +1,5 @@
+model,Semantic,Style,H-Score,Valid Style
+Full_V2,0.8387,0.5875,0.649,0.4385
+w/o_Syntactic,0.8356,0.5805,0.6447,0.4253
+w/o_Pragmatic,0.8344,0.5569,0.6278,0.4135
+w/o_Lexical,0.8471,0.5312,0.6138,0.4184
