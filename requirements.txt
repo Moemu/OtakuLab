@@ -1,5 +1,5 @@
 bitarray
-faiss-gpu
+faiss-cpu
 hanlp
 ipykernel
 iterative-stratification
@@ -16,5 +16,5 @@ sentence-transformers
 tokenizers
 torch>=2.0.0
 tqdm
-ransformers>=4.57.0
+transformers>=4.57.0
 typing-extensions
