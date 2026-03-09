@@ -17,12 +17,12 @@ OtakuLab/
 
 ### Key Directories
 *   **`data/`**: contains the Haruhi, Muice, and generated neutral sentence datasets.
-*   **`outputs/`**: stores the trained style classifiers, FAISS vector indexes, and large language model adapters (LoRA). *Note: Large model files are hosted on Hugging Face (see `outputs/README_OUTPUTS.md`).*
+*   **`outputs/`**: stores the trained style classifiers, FAISS vector indexes, and large language model adapters (LoRA). *Note: Large model files will be released upon acceptance. (see `outputs/README_OUTPUTS.md`).*
 *   **`notebooks/`**: contains all executable code, numbered by execution order.
 
 ## Outputs & Models
 
-Due to file size limits, large model weights (e.g., `outputs/model/styled-qwen`) are not included in this repo. Please refer to `outputs/README_OUTPUTS.md` for download links from Hugging Face.
+Due to file size limits, large model weights (e.g., `outputs/model/styled-qwen`) are not included in this repo. And it will be released upon acceptance.
 
 ## Environmental Setup
 
