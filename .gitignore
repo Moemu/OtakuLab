@@ -16,6 +16,7 @@ wheels/
 # Large Output Files
 outputs/tokens/
 outputs/cons/psydc.json
+outputs/evaluate/
 
 # Model Weights 
 outputs/Vanilla
@@ -23,3 +24,9 @@ outputs/style-classifier/
 outputs/Per-Character/
 outputs/model/
 outputs/DimensionDissolution/styled-qwen-*
+outputs/meta_learner/
+outputs/style/models/
+
+# Temporary files
+*.pkl
+outputs/style/dense/diagnostics/cons/
