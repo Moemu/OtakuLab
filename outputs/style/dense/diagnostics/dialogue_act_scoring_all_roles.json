@@ -1,0 +1,965 @@
+[
+  {
+    "role": "神里绫华",
+    "style_metrics": {
+      "avg_utterance_len": 41.556405353728486,
+      "verb_to_noun_ratio": 1.0027998950039374,
+      "mean_dependency_distance": 4.283725581172584,
+      "mdd_method": "constituency_proxy",
+      "sentence_count": 1046,
+      "discourse_markers": {
+        "induction": {
+          "min_count": 3,
+          "start_candidates": [
+            "嗯",
+            "哦",
+            "是的",
+            "哎呀"
+          ],
+          "end_candidates": [
+            "吗",
+            "的",
+            "吧",
+            "了",
+            "呢",
+            "啊",
+            "而已",
+            "哦"
+          ],
+          "start_raw_counts": {
+            "嗯": 25,
+            "哦": 11,
+            "是的": 9,
+            "呜": 2,
+            "呼啊": 1,
+            "哎呀": 3,
+            "哎": 1,
+            "啊": 2,
+            "啊啊": 1,
+            "呀": 1
+          },
+          "end_raw_counts": {
+            "了": 20,
+            "的": 32,
+            "吗": 39,
+            "吧": 29,
+            "啊": 4,
+            "哦": 3,
+            "么": 1,
+            "呢": 15,
+            "啦": 2,
+            "呀": 1,
+            "而已": 4,
+            "来的": 1
+          }
+        },
+        "sentence_start_count": {
+          "嗯": 25,
+          "哦": 11,
+          "是的": 50,
+          "哎呀": 3
+        },
+        "sentence_start_ratio": {
+          "嗯": 0.02390057361376673,
+          "哦": 0.010516252390057362,
+          "是的": 0.04780114722753346,
+          "哎呀": 0.0028680688336520078
+        },
+        "sentence_end_count": {
+          "吗": 39,
+          "的": 38,
+          "吧": 29,
+          "了": 21,
+          "呢": 15,
+          "啊": 4,
+          "而已": 4,
+          "哦": 3
+        },
+        "sentence_end_ratio": {
+          "吗": 0.0372848948374761,
+          "的": 0.036328871892925434,
+          "吧": 0.027724665391969407,
+          "了": 0.020076481835564052,
+          "呢": 0.014340344168260038,
+          "啊": 0.0038240917782026767,
+          "而已": 0.0038240917782026767,
+          "哦": 0.0028680688336520078
+        }
+      },
+      "punctuation_style": {
+        "multi_exclamation_count": 0,
+        "multi_exclamation_ratio": 0.0,
+        "multi_question_count": 0,
+        "multi_question_ratio": 0.0,
+        "interrobang_count": 0,
+        "interrobang_ratio": 0.0,
+        "ellipsis_count": 4,
+        "ellipsis_ratio": 0.0038240917782026767,
+        "multi_tilde_count": 0,
+        "multi_tilde_ratio": 0.0
+      }
+    },
+    "total_clauses": 3102,
+    "primary_counts": {
+      "question": 183,
+      "imperative": 223,
+      "exclamation": 36,
+      "fragment": 85,
+      "declarative": 2575
+    },
+    "primary_ratios": {
+      "question": 0.05899419729206963,
+      "imperative": 0.07188910380399742,
+      "exclamation": 0.01160541586073501,
+      "fragment": 0.02740167633784655,
+      "declarative": 0.8301096067053514
+    },
+    "multihot_counts": {
+      "question": 191,
+      "imperative": 28,
+      "exclamation": 38,
+      "fragment": 56,
+      "declarative": 2830
+    },
+    "multihot_activation_ratio": {
+      "question": 0.06157317859445519,
+      "imperative": 0.009026434558349452,
+      "exclamation": 0.012250161186331399,
+      "fragment": 0.018052869116698903,
+      "declarative": 0.912314635718891
+    },
+    "avg_len_by_multihot_act": {
+      "question": 6.790575916230367,
+      "imperative": 6.678571428571429,
+      "exclamation": 7.605263157894737,
+      "fragment": 1.7142857142857142,
+      "declarative": 14.730388692579504
+    },
+    "legacy_sentence_primary_summary": {
+      "total": 1046,
+      "question": 172,
+      "imperative": 22,
+      "exclamation": 26,
+      "declarative": 826,
+      "question_ratio": 0.16443594646271512,
+      "imperative_ratio": 0.021032504780114723,
+      "exclamation_ratio": 0.0248565965583174,
+      "declarative_ratio": 0.7896749521988528
+    }
+  },
+  {
+    "role": "芙莉莲",
+    "style_metrics": {
+      "avg_utterance_len": 9.08,
+      "verb_to_noun_ratio": 1.8285714285714285,
+      "mean_dependency_distance": 4.126499342762501,
+      "mdd_method": "constituency_proxy",
+      "sentence_count": 25,
+      "discourse_markers": {
+        "induction": {
+          "min_count": 2,
+          "start_candidates": [],
+          "end_candidates": [
+            "的",
+            "了",
+            "吗",
+            "吧",
+            "而已"
+          ],
+          "start_raw_counts": {},
+          "end_raw_counts": {
+            "吗": 2,
+            "吧": 2,
+            "的": 3,
+            "了": 2,
+            "的话": 1,
+            "而已": 2
+          }
+        },
+        "sentence_start_count": {},
+        "sentence_start_ratio": {},
+        "sentence_end_count": {
+          "的": 3,
+          "了": 2,
+          "吗": 2,
+          "吧": 2,
+          "而已": 2
+        },
+        "sentence_end_ratio": {
+          "的": 0.12,
+          "了": 0.08,
+          "吗": 0.08,
+          "吧": 0.08,
+          "而已": 0.08
+        }
+      },
+      "punctuation_style": {
+        "multi_exclamation_count": 0,
+        "multi_exclamation_ratio": 0.0,
+        "multi_question_count": 0,
+        "multi_question_ratio": 0.0,
+        "interrobang_count": 0,
+        "interrobang_ratio": 0.0,
+        "ellipsis_count": 0,
+        "ellipsis_ratio": 0.0,
+        "multi_tilde_count": 0,
+        "multi_tilde_ratio": 0.0
+      }
+    },
+    "total_clauses": 25,
+    "primary_counts": {
+      "question": 2,
+      "imperative": 9,
+      "exclamation": 0,
+      "fragment": 4,
+      "declarative": 10
+    },
+    "primary_ratios": {
+      "question": 0.08,
+      "imperative": 0.36,
+      "exclamation": 0.0,
+      "fragment": 0.16,
+      "declarative": 0.4
+    },
+    "multihot_counts": {
+      "question": 1,
+      "imperative": 0,
+      "exclamation": 0,
+      "fragment": 0,
+      "declarative": 24
+    },
+    "multihot_activation_ratio": {
+      "question": 0.04,
+      "imperative": 0.0,
+      "exclamation": 0.0,
+      "fragment": 0.0,
+      "declarative": 0.96
+    },
+    "avg_len_by_multihot_act": {
+      "question": 6.0,
+      "imperative": 0.0,
+      "exclamation": 0.0,
+      "fragment": 0.0,
+      "declarative": 9.208333333333334
+    },
+    "legacy_sentence_primary_summary": {
+      "total": 25,
+      "question": 1,
+      "imperative": 0,
+      "exclamation": 0,
+      "declarative": 24,
+      "question_ratio": 0.04,
+      "imperative_ratio": 0.0,
+      "exclamation_ratio": 0.0,
+      "declarative_ratio": 0.96
+    }
+  },
+  {
+    "role": "凉宫春日",
+    "style_metrics": {
+      "avg_utterance_len": 29.180555555555557,
+      "verb_to_noun_ratio": 1.2682210031347962,
+      "mean_dependency_distance": 4.313969028884231,
+      "mdd_method": "constituency_proxy",
+      "sentence_count": 792,
+      "discourse_markers": {
+        "induction": {
+          "min_count": 2,
+          "start_candidates": [
+            "哼",
+            "嗯",
+            "哈哈",
+            "哇",
+            "哦",
+            "啊",
+            "喂",
+            "嘿",
+            "哼哼",
+            "咦",
+            "哈"
+          ],
+          "end_candidates": [
+            "吗",
+            "了",
+            "的",
+            "呢",
+            "吧",
+            "啊",
+            "而已",
+            "嘛",
+            "啦",
+            "哦",
+            "啊？"
+          ],
+          "start_raw_counts": {
+            "哼": 59,
+            "嘿": 4,
+            "哈哈": 14,
+            "嗯": 19,
+            "哦": 10,
+            "啊": 6,
+            "喂": 4,
+            "哇": 13,
+            "嘿嘿": 1,
+            "哈": 2,
+            "哎呀": 1,
+            "喂喂": 1,
+            "哼哼": 3,
+            "唔": 1,
+            "呀": 1,
+            "呐": 1,
+            "咦": 2
+          },
+          "end_raw_counts": {
+            "啦": 6,
+            "吧": 32,
+            "了": 43,
+            "吗": 55,
+            "啊？": 3,
+            "而已": 9,
+            "啊": 29,
+            "的": 41,
+            "呢": 34,
+            "咧": 1,
+            "耶": 1,
+            "嘛": 8,
+            "哦": 4,
+            "罢了": 1
+          }
+        },
+        "sentence_start_count": {
+          "哼": 59,
+          "嗯": 19,
+          "哈哈": 14,
+          "哇": 13,
+          "哦": 10,
+          "啊": 6,
+          "喂": 4,
+          "嘿": 4,
+          "哼哼": 3,
+          "咦": 2,
+          "哈": 2
+        },
+        "sentence_start_ratio": {
+          "哼": 0.07449494949494949,
+          "嗯": 0.023989898989898988,
+          "哈哈": 0.017676767676767676,
+          "哇": 0.016414141414141416,
+          "哦": 0.012626262626262626,
+          "啊": 0.007575757575757576,
+          "喂": 0.005050505050505051,
+          "嘿": 0.005050505050505051,
+          "哼哼": 0.003787878787878788,
+          "咦": 0.0025252525252525255,
+          "哈": 0.0025252525252525255
+        },
+        "sentence_end_count": {
+          "吗": 55,
+          "了": 43,
+          "的": 46,
+          "呢": 34,
+          "吧": 32,
+          "啊": 29,
+          "而已": 9,
+          "嘛": 8,
+          "啦": 6,
+          "哦": 4,
+          "啊？": 3
+        },
+        "sentence_end_ratio": {
+          "吗": 0.06944444444444445,
+          "了": 0.054292929292929296,
+          "的": 0.05808080808080808,
+          "呢": 0.04292929292929293,
+          "吧": 0.04040404040404041,
+          "啊": 0.036616161616161616,
+          "而已": 0.011363636363636364,
+          "嘛": 0.010101010101010102,
+          "啦": 0.007575757575757576,
+          "哦": 0.005050505050505051,
+          "啊？": 0.003787878787878788
+        }
+      },
+      "punctuation_style": {
+        "multi_exclamation_count": 0,
+        "multi_exclamation_ratio": 0.0,
+        "multi_question_count": 0,
+        "multi_question_ratio": 0.0,
+        "interrobang_count": 0,
+        "interrobang_ratio": 0.0,
+        "ellipsis_count": 7,
+        "ellipsis_ratio": 0.008838383838383838,
+        "multi_tilde_count": 0,
+        "multi_tilde_ratio": 0.0
+      }
+    },
+    "total_clauses": 2209,
+    "primary_counts": {
+      "question": 302,
+      "imperative": 125,
+      "exclamation": 759,
+      "fragment": 137,
+      "declarative": 886
+    },
+    "primary_ratios": {
+      "question": 0.13671344499773652,
+      "imperative": 0.05658669081032141,
+      "exclamation": 0.34359438660027164,
+      "fragment": 0.06201901312811227,
+      "declarative": 0.40108646446355817
+    },
+    "multihot_counts": {
+      "question": 361,
+      "imperative": 31,
+      "exclamation": 791,
+      "fragment": 143,
+      "declarative": 1033
+    },
+    "multihot_activation_ratio": {
+      "question": 0.16342236306020824,
+      "imperative": 0.01403349932095971,
+      "exclamation": 0.3580805794477139,
+      "fragment": 0.0647351742870077,
+      "declarative": 0.46763241285649615
+    },
+    "avg_len_by_multihot_act": {
+      "question": 5.490304709141275,
+      "imperative": 8.580645161290322,
+      "exclamation": 9.413400758533502,
+      "fragment": 1.4265734265734267,
+      "declarative": 13.104549854791868
+    },
+    "legacy_sentence_primary_summary": {
+      "total": 792,
+      "question": 289,
+      "imperative": 18,
+      "exclamation": 298,
+      "declarative": 187,
+      "question_ratio": 0.3648989898989899,
+      "imperative_ratio": 0.022727272727272728,
+      "exclamation_ratio": 0.37626262626262624,
+      "declarative_ratio": 0.2361111111111111
+    }
+  },
+  {
+    "role": "胡桃",
+    "style_metrics": {
+      "avg_utterance_len": 43.698234349919744,
+      "verb_to_noun_ratio": 1.2681073780178964,
+      "mean_dependency_distance": 4.509815659897434,
+      "mdd_method": "constituency_proxy",
+      "sentence_count": 623,
+      "discourse_markers": {
+        "induction": {
+          "min_count": 2,
+          "start_candidates": [
+            "嘿嘿",
+            "嘻嘻",
+            "哇",
+            "嗯",
+            "哈哈",
+            "哦",
+            "哎呀",
+            "哦哦",
+            "哟"
+          ],
+          "end_candidates": [
+            "呢",
+            "哦",
+            "吧",
+            "的",
+            "吗",
+            "啊",
+            "了",
+            "啦",
+            "嘛",
+            "而已"
+          ],
+          "start_raw_counts": {
+            "哦": 10,
+            "哇": 31,
+            "咳咳": 1,
+            "哎呀": 8,
+            "嘻嘻": 82,
+            "欸": 1,
+            "哦哦": 8,
+            "嘿嘿": 124,
+            "嗨": 1,
+            "嗯": 18,
+            "哼哼": 1,
+            "哈哈": 10,
+            "哟": 2,
+            "唉": 1,
+            "咦": 1
+          },
+          "end_raw_counts": {
+            "吗": 32,
+            "呢": 65,
+            "的": 37,
+            "哦": 57,
+            "了": 16,
+            "咯": 1,
+            "吧": 49,
+            "啊": 17,
+            "嘛": 10,
+            "啦": 13,
+            "的了": 1,
+            "而已": 5
+          }
+        },
+        "sentence_start_count": {
+          "嘿嘿": 124,
+          "嘻嘻": 82,
+          "哇": 31,
+          "嗯": 18,
+          "哈哈": 10,
+          "哦": 10,
+          "哎呀": 8,
+          "哦哦": 8,
+          "哟": 2
+        },
+        "sentence_start_ratio": {
+          "嘿嘿": 0.19903691813804172,
+          "嘻嘻": 0.13162118780096307,
+          "哇": 0.04975922953451043,
+          "嗯": 0.028892455858747994,
+          "哈哈": 0.016051364365971106,
+          "哦": 0.016051364365971106,
+          "哎呀": 0.012841091492776886,
+          "哦哦": 0.012841091492776886,
+          "哟": 0.0032102728731942215
+        },
+        "sentence_end_count": {
+          "呢": 65,
+          "哦": 57,
+          "吧": 49,
+          "的": 43,
+          "吗": 32,
+          "啊": 17,
+          "了": 17,
+          "啦": 13,
+          "嘛": 10,
+          "而已": 6
+        },
+        "sentence_end_ratio": {
+          "呢": 0.1043338683788122,
+          "哦": 0.09149277688603531,
+          "吧": 0.07865168539325842,
+          "的": 0.06902086677367576,
+          "吗": 0.051364365971107544,
+          "啊": 0.027287319422150885,
+          "了": 0.027287319422150885,
+          "啦": 0.02086677367576244,
+          "嘛": 0.016051364365971106,
+          "而已": 0.009630818619582664
+        }
+      },
+      "punctuation_style": {
+        "multi_exclamation_count": 0,
+        "multi_exclamation_ratio": 0.0,
+        "multi_question_count": 0,
+        "multi_question_ratio": 0.0,
+        "interrobang_count": 0,
+        "interrobang_ratio": 0.0,
+        "ellipsis_count": 10,
+        "ellipsis_ratio": 0.016051364365971106,
+        "multi_tilde_count": 0,
+        "multi_tilde_ratio": 0.0
+      }
+    },
+    "total_clauses": 2234,
+    "primary_counts": {
+      "question": 185,
+      "imperative": 200,
+      "exclamation": 549,
+      "fragment": 102,
+      "declarative": 1198
+    },
+    "primary_ratios": {
+      "question": 0.0828111011638317,
+      "imperative": 0.08952551477170993,
+      "exclamation": 0.2457475380483438,
+      "fragment": 0.045658012533572066,
+      "declarative": 0.5362578334825425
+    },
+    "multihot_counts": {
+      "question": 231,
+      "imperative": 38,
+      "exclamation": 575,
+      "fragment": 105,
+      "declarative": 1397
+    },
+    "multihot_activation_ratio": {
+      "question": 0.10340196956132498,
+      "imperative": 0.017009847806624886,
+      "exclamation": 0.25738585496866606,
+      "fragment": 0.047000895255147716,
+      "declarative": 0.6253357206803939
+    },
+    "avg_len_by_multihot_act": {
+      "question": 6.116883116883117,
+      "imperative": 8.447368421052632,
+      "exclamation": 9.906086956521738,
+      "fragment": 1.4285714285714286,
+      "declarative": 14.284896206156048
+    },
+    "legacy_sentence_primary_summary": {
+      "total": 623,
+      "question": 196,
+      "imperative": 17,
+      "exclamation": 200,
+      "declarative": 210,
+      "question_ratio": 0.3146067415730337,
+      "imperative_ratio": 0.027287319422150885,
+      "exclamation_ratio": 0.32102728731942215,
+      "declarative_ratio": 0.33707865168539325
+    }
+  },
+  {
+    "role": "沐雪",
+    "style_metrics": {
+      "avg_utterance_len": 16.22337383845604,
+      "verb_to_noun_ratio": 1.6558567279767666,
+      "mean_dependency_distance": 4.210867715264306,
+      "mdd_method": "constituency_proxy",
+      "sentence_count": 2798,
+      "discourse_markers": {
+        "induction": {
+          "min_count": 8,
+          "start_candidates": [
+            "嗯",
+            "唔",
+            "啊",
+            "呃"
+          ],
+          "end_candidates": [
+            "呢",
+            "了",
+            "的",
+            "哦",
+            "吧",
+            "啦",
+            "喵",
+            "嘛",
+            "吗",
+            "呀",
+            "啊",
+            "哒",
+            "哼"
+          ],
+          "start_raw_counts": {
+            "嗯": 76,
+            "嘿嘿": 3,
+            "唔": 48,
+            "哎呀": 3,
+            "呜呜": 1,
+            "欸": 2,
+            "额": 1,
+            "啊": 25,
+            "嘿": 3,
+            "诶": 3,
+            "呃": 14,
+            "哦": 4,
+            "哇": 6,
+            "哈": 2,
+            "呐": 3,
+            "Hi": 1,
+            "嘻嘻": 3,
+            "喵": 4,
+            "嗨": 5,
+            "喵呜": 1,
+            "哼": 4,
+            "喵呀": 1,
+            "啊呀": 1,
+            "喂喂": 1,
+            "我去": 1,
+            "诶嘿": 1,
+            "阿": 2,
+            "嗨呀": 3,
+            "是的": 2,
+            "天呐": 1,
+            "啊嘞": 1,
+            "hi": 1,
+            "喔": 2,
+            "阿巴": 1,
+            "呜哇": 1
+          },
+          "end_raw_counts": {
+            "啦": 98,
+            "了": 160,
+            "呢": 264,
+            "吧": 124,
+            "哦": 128,
+            "喵": 97,
+            "的": 144,
+            "嘛": 64,
+            "的说": 5,
+            "呀": 27,
+            "惹": 3,
+            "吗": 45,
+            "哼": 9,
+            "嘿嘿": 2,
+            "呐": 5,
+            "捏": 2,
+            "哒": 9,
+            "啊": 12,
+            "咯": 2,
+            "嘻嘻": 3,
+            "你吗": 1,
+            "噢": 7,
+            "么": 1,
+            "哈哈": 1,
+            "哟": 2,
+            "罢": 4,
+            "嘻": 2,
+            "罢了": 2,
+            "的了": 1,
+            "哇": 1,
+            "喔": 2,
+            "嘞": 1,
+            "而已": 1,
+            "咪": 3,
+            "阿巴": 1,
+            "觉的": 1
+          }
+        },
+        "sentence_start_count": {
+          "嗯": 76,
+          "唔": 48,
+          "啊": 25,
+          "呃": 14
+        },
+        "sentence_start_ratio": {
+          "嗯": 0.027162258756254467,
+          "唔": 0.017155110793423873,
+          "啊": 0.008934953538241601,
+          "呃": 0.005003573981415297
+        },
+        "sentence_end_count": {
+          "呢": 264,
+          "了": 169,
+          "的": 174,
+          "哦": 128,
+          "吧": 124,
+          "啦": 98,
+          "喵": 147,
+          "嘛": 64,
+          "吗": 45,
+          "呀": 27,
+          "啊": 12,
+          "哒": 9,
+          "哼": 9
+        },
+        "sentence_end_ratio": {
+          "呢": 0.0943531093638313,
+          "了": 0.06040028591851322,
+          "的": 0.062187276626161546,
+          "哦": 0.045746962115797,
+          "吧": 0.04431736954967834,
+          "啦": 0.035025017869907075,
+          "喵": 0.05253752680486062,
+          "嘛": 0.0228734810578985,
+          "吗": 0.016082916368834882,
+          "呀": 0.00964974982130093,
+          "啊": 0.004288777698355968,
+          "哒": 0.0032165832737669764,
+          "哼": 0.0032165832737669764
+        }
+      },
+      "punctuation_style": {
+        "multi_exclamation_count": 4,
+        "multi_exclamation_ratio": 0.0014295925661186562,
+        "multi_question_count": 0,
+        "multi_question_ratio": 0.0,
+        "interrobang_count": 6,
+        "interrobang_ratio": 0.002144388849177984,
+        "ellipsis_count": 339,
+        "ellipsis_ratio": 0.12115796997855612,
+        "multi_tilde_count": 0,
+        "multi_tilde_ratio": 0.0
+      }
+    },
+    "total_clauses": 4353,
+    "primary_counts": {
+      "question": 747,
+      "imperative": 574,
+      "exclamation": 1130,
+      "fragment": 484,
+      "declarative": 1418
+    },
+    "primary_ratios": {
+      "question": 0.17160578911095797,
+      "imperative": 0.13186308293131174,
+      "exclamation": 0.25959108660693775,
+      "fragment": 0.11118768665288307,
+      "declarative": 0.3257523546979095
+    },
+    "multihot_counts": {
+      "question": 761,
+      "imperative": 101,
+      "exclamation": 1236,
+      "fragment": 221,
+      "declarative": 2254
+    },
+    "multihot_activation_ratio": {
+      "question": 0.1748219618653802,
+      "imperative": 0.023202389156903286,
+      "exclamation": 0.2839421088904204,
+      "fragment": 0.050769584194808176,
+      "declarative": 0.5178038134619802
+    },
+    "avg_len_by_multihot_act": {
+      "question": 8.492772667542708,
+      "imperative": 7.792079207920792,
+      "exclamation": 7.199838187702265,
+      "fragment": 1.6470588235294117,
+      "declarative": 13.177018633540373
+    },
+    "legacy_sentence_primary_summary": {
+      "total": 2798,
+      "question": 641,
+      "imperative": 81,
+      "exclamation": 721,
+      "declarative": 1355,
+      "question_ratio": 0.22909220872051464,
+      "imperative_ratio": 0.028949249463902788,
+      "exclamation_ratio": 0.2576840600428878,
+      "declarative_ratio": 0.4842744817726948
+    }
+  },
+  {
+    "role": "钟离",
+    "style_metrics": {
+      "avg_utterance_len": 39.66062176165803,
+      "verb_to_noun_ratio": 0.927587012380285,
+      "mean_dependency_distance": 4.259045050042152,
+      "mdd_method": "constituency_proxy",
+      "sentence_count": 386,
+      "discourse_markers": {
+        "induction": {
+          "min_count": 2,
+          "start_candidates": [
+            "哦",
+            "哈哈",
+            "哼",
+            "嗯"
+          ],
+          "end_candidates": [
+            "吧",
+            "吗",
+            "呢",
+            "的",
+            "而已",
+            "了"
+          ],
+          "start_raw_counts": {
+            "哦": 16,
+            "嘶": 1,
+            "嗯": 3,
+            "哈哈": 3,
+            "哼": 3,
+            "以": 1
+          },
+          "end_raw_counts": {
+            "吧": 13,
+            "呢": 6,
+            "嘛": 1,
+            "啊": 1,
+            "吗": 10,
+            "的": 6,
+            "了": 2,
+            "罢了": 1,
+            "而已": 3
+          }
+        },
+        "sentence_start_count": {
+          "哦": 16,
+          "哈哈": 3,
+          "哼": 3,
+          "嗯": 3
+        },
+        "sentence_start_ratio": {
+          "哦": 0.04145077720207254,
+          "哈哈": 0.007772020725388601,
+          "哼": 0.007772020725388601,
+          "嗯": 0.007772020725388601
+        },
+        "sentence_end_count": {
+          "吧": 13,
+          "吗": 10,
+          "呢": 6,
+          "的": 10,
+          "而已": 3,
+          "了": 2
+        },
+        "sentence_end_ratio": {
+          "吧": 0.03367875647668394,
+          "吗": 0.025906735751295335,
+          "呢": 0.015544041450777202,
+          "的": 0.025906735751295335,
+          "而已": 0.007772020725388601,
+          "了": 0.0051813471502590676
+        }
+      },
+      "punctuation_style": {
+        "multi_exclamation_count": 0,
+        "multi_exclamation_ratio": 0.0,
+        "multi_question_count": 0,
+        "multi_question_ratio": 0.0,
+        "interrobang_count": 0,
+        "interrobang_ratio": 0.0,
+        "ellipsis_count": 10,
+        "ellipsis_ratio": 0.025906735751295335,
+        "multi_tilde_count": 0,
+        "multi_tilde_ratio": 0.0
+      }
+    },
+    "total_clauses": 1196,
+    "primary_counts": {
+      "question": 83,
+      "imperative": 119,
+      "exclamation": 1,
+      "fragment": 87,
+      "declarative": 906
+    },
+    "primary_ratios": {
+      "question": 0.06939799331103678,
+      "imperative": 0.09949832775919733,
+      "exclamation": 0.0008361204013377926,
+      "fragment": 0.07274247491638795,
+      "declarative": 0.7575250836120402
+    },
+    "multihot_counts": {
+      "question": 122,
+      "imperative": 16,
+      "exclamation": 1,
+      "fragment": 60,
+      "declarative": 1049
+    },
+    "multihot_activation_ratio": {
+      "question": 0.1020066889632107,
+      "imperative": 0.013377926421404682,
+      "exclamation": 0.0008361204013377926,
+      "fragment": 0.05016722408026756,
+      "declarative": 0.8770903010033445
+    },
+    "avg_len_by_multihot_act": {
+      "question": 4.565573770491803,
+      "imperative": 10.8125,
+      "exclamation": 18.0,
+      "fragment": 1.4,
+      "declarative": 13.877979027645377
+    },
+    "legacy_sentence_primary_summary": {
+      "total": 386,
+      "question": 91,
+      "imperative": 11,
+      "exclamation": 1,
+      "declarative": 283,
+      "question_ratio": 0.23575129533678757,
+      "imperative_ratio": 0.02849740932642487,
+      "exclamation_ratio": 0.0025906735751295338,
+      "declarative_ratio": 0.7331606217616581
+    }
+  }
+]
