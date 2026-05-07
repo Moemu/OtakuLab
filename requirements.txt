@@ -8,6 +8,8 @@ numpy
 openai
 pandas
 peft
+trl
+flash-attn; platform_system != "Windows"
 python-dotenv
 scikit-learn>=1.7.0
 scipy
