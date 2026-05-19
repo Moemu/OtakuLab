@@ -11,11 +11,11 @@ The following lightweight results are directly included in this repository for r
 *   **`meta_learner/`**: Lightweight meta-learner models (PyTorch `.pth`).
 *   **`cons/`**: Constituency parse trees (JSON) for most styles (except PsyDC).
 
-## ☁️ Hosted on External Platforms
+## ☁️ Not Included in Repository(Model weights and large datasets)
 
-Due to file size limits, large models and datasets are hosted on External Platforms.
+Due to file size limits, large models and datasets are not included in this repository.
 
-It will be released upon acceptance.
+They will be released upon acceptance.
 
 ## 🏗️ Reproducible Locally
 The following files are excluded but can be reproduced by running the notebooks:
