@@ -34,3 +34,4 @@ outputs/style/models/
 # Temporary files
 *.pkl
 outputs/style/dense/diagnostics/cons/
+LaTex
