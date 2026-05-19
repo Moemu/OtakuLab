@@ -17,7 +17,7 @@ OtakuLab/
 
 ### Key Directories
 *   **`data/`**: contains the Haruhi, Muice, and generated neutral sentence datasets.
-*   **`outputs/`**: stores the trained style classifiers, FAISS vector indexes, and large language model adapters (LoRA). *Note: Large model files will be released upon acceptance. (see `outputs/README_OUTPUTS.md`).*
+*   **`outputs/`**: stores the trained style classifiers, FAISS vector indexes, and large language model adapters (LoRA). *Note: Large model files will be released upon acceptance. (see `outputs/README.md`).*
 *   **`notebooks/`**: contains all executable code, numbered by execution order.
 
 ## Outputs & Models
@@ -51,13 +51,15 @@ The notebooks are numbered to indicate the correct execution order. Please run t
 
 ### 2: Feature Engineering (Optional)
 *   `11_feature_pmi_builder.ipynb`: Extract PMI-based lexical keywords.
-*   `12_feature_pcfg_builder.ipynb`: Construct PCFG syntactic vectors.
-*   `13_feature_prag_vectors.ipynb`: Build pragmatic style centroids.
+*   `12_feature_style_vector_phase2.ipynb`: Construct style vectors and pragmatic features.
+*   `13_feature_prag_vectors.ipynb`: Build pragmatic style centroids and meta-learner models.
 *   `14_feature_rag_index.ipynb`: Build FAISS indexes for RAG retrieval.
 
 ### 3: Model Training (Core)
 *   **Main**: `22_train_sft_main.ipynb` (Train the Qwen-based Style-SFT model).
-*   **Baselines**: `23_train_sft_vanilla.ipynb`, `24_train_sft_per_char.ipynb`.
+*   **DPO Training**: `24_train_dpo_main.ipynb` (Direct Preference Optimization training).
+*   **Data Preparation**: `16_build_dpo_pairs.ipynb` (Build DPO training pairs).
+*   **Baselines**: `23_train_sft_vanilla.ipynb` (Vanilla SFT baseline).
 *   **Evaluator**: `21_train_style_classifier.ipynb` (Train the RoBERTa style classifier).
 
 ### 4: Evaluation & Analysis (Required for main results)
@@ -67,6 +69,7 @@ The notebooks are numbered to indicate the correct execution order. Please run t
 *   `34_eval_significance.ipynb`: Statistical significance testing.
 *   `35_ana_syntactic_dim.ipynb`: Analyse syntactic dimensions.
 *   `36_ana_style_extract_frieren.ipynb`: Case study (Frieren).
+*   `38_ablation_style_vectors.ipynb`: Ablation study on style vector components.
 
 ## Minimal Reproducion
 
