@@ -12,11 +12,6 @@ wheels/
 
 .env
 
-# Upload upon acceptance
-
-# Large DPO datasets
-data/dpo_train/
-
 # Large Output Files
 outputs/tokens/
 outputs/cons/psydc.json

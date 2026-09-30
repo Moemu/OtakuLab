@@ -1,0 +1,224 @@
+{
+  "snapshot_date": "2026-09-30",
+  "baseline_commit": "dc1feae478e689d33fe4187c906bfde22b07aac6",
+  "status": "latest local data after the double-blind review period; paper data update pending",
+  "vss": {
+    "semantic_threshold": 0.75,
+    "comparison": ">",
+    "below_or_equal_multiplier": 0.1
+  },
+  "files": [
+    {
+      "path": "dpo_train/dpo_pairs_v43_neutral.json",
+      "rows": 8272,
+      "bytes": 13669097,
+      "sha256": "136e78533f9b7bd88c205d83b72c54a621b43ca3008c77117814f2b674d5dce1",
+      "fields": [
+        "chosen",
+        "meta",
+        "prompt",
+        "rejected"
+      ]
+    },
+    {
+      "path": "dpo_train/dpo_pairs_v43_neutral.jsonl",
+      "rows": 8272,
+      "bytes": 12635095,
+      "sha256": "822994fc067ae3ed884b51e162216c8a000d240dcb25cf6ed17e5d069d311b50",
+      "fields": [
+        "chosen",
+        "meta",
+        "prompt",
+        "rejected"
+      ]
+    },
+    {
+      "path": "dpo_train/dpo_pairs_wo_cot_shared.jsonl",
+      "rows": 8272,
+      "bytes": 12664540,
+      "sha256": "4d53f9bfaec85d10d514062096aa4c8ee21fbad79d4e05d9bcaebf9b46364895",
+      "fields": [
+        "chosen",
+        "meta",
+        "prompt",
+        "rejected"
+      ]
+    },
+    {
+      "path": "dpo_train/dpo_train_v43.jsonl",
+      "rows": 8220,
+      "bytes": 11122057,
+      "sha256": "10dd81353621b655ce408e654f88caf9726bc052efbc82d130d622d6bee80d9f",
+      "fields": [
+        "chosen",
+        "prompt",
+        "rejected"
+      ]
+    },
+    {
+      "path": "dpo_train/dpo_train_wo_cot_shared.jsonl",
+      "rows": 8190,
+      "bytes": 11148174,
+      "sha256": "103c1ca10d21a7c197e222c1f967dd45298c6dd04a0e5920733a2d945127a9a1",
+      "fields": [
+        "chosen",
+        "prompt",
+        "rejected"
+      ]
+    },
+    {
+      "path": "frieren.jsonl",
+      "rows": 80,
+      "bytes": 14553,
+      "sha256": "a150c17f8c7abba79e1a0a8444283b3589f7dc7dfb7070acd670f53731528535",
+      "fields": [
+        "character",
+        "context",
+        "neutral",
+        "original"
+      ]
+    },
+    {
+      "path": "golden_annotation.jsonl",
+      "rows": 731,
+      "bytes": 189361,
+      "sha256": "1a2fb2daaa5f635206d13819f082bf46b5b5b442db92a75435f46b97fbf50e2e",
+      "fields": [
+        "agent_response",
+        "tags",
+        "user_prompt"
+      ]
+    },
+    {
+      "path": "llm_train.json",
+      "rows": 8272,
+      "bytes": 10960777,
+      "sha256": "f383aecdcfa165c875e660895daddb70adaa337047fd0f8c00aca33a8c8041c3",
+      "fields": [
+        "character",
+        "instruction_components",
+        "neutral_sentence",
+        "output",
+        "thinking_process"
+      ]
+    },
+    {
+      "path": "llm_train_oversampling.json",
+      "rows": 9521,
+      "bytes": 12408047,
+      "sha256": "f14ed109f67fe65bb6783120068abb9a709d80cb9bd33ea5d41eed0e86676b77",
+      "fields": [
+        "character",
+        "instruction_components",
+        "neutral_sentence",
+        "output",
+        "thinking_process"
+      ]
+    },
+    {
+      "path": "neutral_sentences.jsonl",
+      "rows": 10965,
+      "bytes": 4103820,
+      "sha256": "78cd2ba4b55142b9fa42fb2d820b1168ca29d0af8353323286cff23628657292",
+      "fields": [
+        "character",
+        "neutral",
+        "original"
+      ]
+    },
+    {
+      "path": "neutral_sentences_eval.jsonl",
+      "rows": 150,
+      "bytes": 24202,
+      "sha256": "d1ebe7c616821f3894275decb487510ffa5b0a7ebd320e02347881a870659b4c",
+      "fields": [
+        "neutral",
+        "subset"
+      ]
+    },
+    {
+      "path": "neutral_sentences_eval_extra.jsonl",
+      "rows": 230,
+      "bytes": 32128,
+      "sha256": "04198cfd477538b7d1cdded5601d61d53c40fbd9ca09bf66f2feb1df5ee0322e",
+      "fields": [
+        "neutral",
+        "subset"
+      ]
+    },
+    {
+      "path": "neutral_sentences_with_CoT.jsonl",
+      "rows": 10921,
+      "bytes": 6515053,
+      "sha256": "10776c1c9ba19121d95a7bffdea7a82d7a82ce7ebf33cff32ffce332b11128e8",
+      "fields": [
+        "CoT",
+        "character",
+        "neutral",
+        "original"
+      ]
+    },
+    {
+      "path": "raw/Haruhi/Haruhi_clean.jsonl",
+      "rows": 9272,
+      "bytes": 5057919,
+      "sha256": "8f1304b8c4cde18aa669df2c4613ca0edb8268abb0bd81062fa92aacff15b117",
+      "fields": [
+        "agent_response",
+        "agent_role",
+        "agent_role_name_en",
+        "item_index",
+        "more_dialogues",
+        "question_source",
+        "user_question",
+        "user_role"
+      ]
+    },
+    {
+      "path": "raw/wukong/wukong_dialog_qa.jsonl",
+      "rows": 700,
+      "bytes": 167046,
+      "sha256": "89054a9b08991f8e0adb042ffd22d89437f8f00243b61d93365ffefd720676b2",
+      "fields": [
+        "agent_response",
+        "user_question"
+      ]
+    },
+    {
+      "path": "raw/wukong/wukong_dialog_qa_audit.jsonl",
+      "rows": 1507,
+      "bytes": 1099905,
+      "sha256": "60be04eefcfa45f7de5f802cce10ee431b4059e3ffb16428a280fdb49f4b1738",
+      "fields": [
+        "agent_response",
+        "agent_speaker",
+        "judge_raw",
+        "kept",
+        "reason",
+        "stage",
+        "user_question",
+        "user_speaker"
+      ]
+    },
+    {
+      "path": "raw/wukong/wukong_dialog_qa_preclean.jsonl",
+      "rows": 1507,
+      "bytes": 356161,
+      "sha256": "1e011644aa17878cb9abce1776d45c7e64bd16f19c24072a588e42282a7c7067",
+      "fields": [
+        "agent_response",
+        "user_question"
+      ]
+    },
+    {
+      "path": "vanilla_llm_train.json",
+      "rows": 10179,
+      "bytes": 10432043,
+      "sha256": "c843a674e49c9ee3e10aba0ebb3a251d5d291411d99929de346be30659085095",
+      "fields": [
+        "conversations",
+        "system"
+      ]
+    }
+  ]
+}

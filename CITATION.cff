@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the paper when using these experiments."
+title: OtakuLab
+type: software
+authors:
+  - family-names: Zhu
+    given-names: Chanhui
+repository-code: "https://github.com/Moemu/OtakuLab"
+preferred-citation:
+  type: article
+  title: "Structured Style-Rewrite with Chain-of-Thought Planning for Low-Resource Character Dialogue"
+  authors:
+    - family-names: Zhu
+      given-names: Chanhui
+  year: 2026
+  journal: arXiv
+  doi: "10.48550/arXiv.2603.05933"
+  url: "https://arxiv.org/abs/2603.05933"

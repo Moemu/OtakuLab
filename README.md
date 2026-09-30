@@ -1,112 +1,99 @@
 # OtakuLab
 
-OtakuLab is the experimental codebase for reproducing the results of the paper. It contains the complete workflow from data cleaning, feature extraction (PMI, PCFG, Pragmatic vectors), model fine-tuning (Styled-Qwen), to automated evaluation.
+[English](README.md) | [简体中文](README.zh-CN.md)
 
-## Project Structure
+OtakuLab contains the experiments for **Structured Style-Rewrite with Chain-of-Thought Planning for Low-Resource Character Dialogue**.
 
-Verified and reorganized directory structure:
+[Paper (arXiv:2603.05933)](https://arxiv.org/abs/2603.05933) · [Paper v2](https://arxiv.org/abs/2603.05933v2) · [Repository](https://github.com/Moemu/OtakuLab)
 
-```
+The task is sentence-level rewriting: preserve a neutral sentence's meaning while expressing a target character's style. The framework combines formatting signatures, structural features, pragmatic traits, and chain-of-thought (CoT) planning. Training uses supervised fine-tuning (SFT), followed by CoT-shared direct preference optimization (DPO).
+
+The main training workflow covers eight characters: Muice, Ayaka, Zhongli, Hu Tao, Haruhi, Li Yunlong, Sheldon, and Wukong. Frieren is a separate held-out character study. Historical experiments also reference PsyDC and other roles.
+
+## Current availability
+
+This is a notebook-based research repository. The `v2` branch includes the latest local training data, DPO datasets, the expanded 230-sentence evaluation set, and 80 Frieren samples. It also includes style features, historical saved generations and evaluation arrays, and three small meta-learner checkpoints. See the [data snapshot](data/README.md) and its file hashes.
+
+The additions were prepared during double-blind review. That review period has ended. The maintainer will update the paper's experimental data later; this repository snapshot does not claim that the current paper already reports the expanded data.
+
+**A fresh clone does not yet provide a complete, verified training or inference run.** Generator adapters, the trained style classifier, and RAG indexes have no documented public download location. Notebooks also contain machine-specific paths and different experiment versions. Read the [reproduction guide](docs/reproduction.md) before running cells.
+
+The reported experiments use VSS = style score × (1 if semantic score > 0.75 else 0.1). This is the reproduction standard, confirmed by the maintainer. Hard-gated recalculation scripts are separate sensitivity analyses. Evaluation filenames still need alignment; record the Git revision and test set when comparing results.
+
+## Choose a starting point
+
+| Goal | Start here | Additional resources |
+| --- | --- | --- |
+| Understand the method and files | [Repository map](docs/repository-map.md) | None |
+| Inspect saved results | [Saved-result walkthrough](docs/reproduction.md#inspect-saved-results) | Python; no GPU or API key |
+| Score existing generations | [Evaluation route](docs/reproduction.md#evaluate-existing-generations) | Classifier checkpoint, RoBERTa, BGE |
+| Train and generate outputs | [Training route](docs/reproduction.md#train-and-generate) | Base models, training hardware, selected external data |
+| Prepare a wider release | [发布前检查](docs/release-readiness.md) | Maintainer decisions and validation |
+
+## Repository layout
+
+```text
 OtakuLab/
-├── data/               # Raw and processed datasets (JSONL)
-├── notebooks/          # Step-by-step experiment notebooks
-├── outputs/            # Experiment inputs/outputs (Models, Logs, Indexes)
-├── requirements.txt    # Python dependencies
-└── README.md           # This file
+├── data/                 # Processed corpora, training sets, evaluation inputs
+├── notebooks/            # Feature, training, evaluation, and analysis notebooks
+├── outputs/              # Tracked results/features and local model artifacts
+├── scripts/              # Local curation and metric-recalculation helpers
+├── docs/                 # Repository map, reproduction guide, release checks
+├── LaTex/                # Local figure outputs; ignored by Git
+├── .env.example          # API configuration template; no credentials
+├── requirements.txt      # Research dependencies; not a version lock
+├── CONTRIBUTING.md       # Contribution and experiment-reporting guidance
+└── CITATION.cff          # Paper citation metadata
 ```
 
-### Key Directories
-*   **`data/`**: contains the Haruhi, Muice, and generated neutral sentence datasets.
-*   **`outputs/`**: stores the trained style classifiers, FAISS vector indexes, and large language model adapters (LoRA). *Note: Large model files will be released upon acceptance. (see `outputs/README.md`).*
-*   **`notebooks/`**: contains all executable code, numbered by execution order.
+`scripts/` was untracked when these documents were prepared. Its local presence does not guarantee availability in a clone.
 
-## Outputs & Models
+## Environment preparation
 
-Due to file size limits, large model weights (e.g., `outputs/model/styled-qwen`) are not included in this repo. And it will be released upon acceptance.
+The previous setup used Python 3.12 and Conda. This is a starting point, not a validated compatibility matrix.
 
-## Environmental Setup
-
-This project uses **Conda** for environment management.
-
-1.  **Create Conda Environment**:
-    ```bash
-    conda create -n Paper python=3.12
-    conda activate Paper
-    ```
-
-2.  **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-    *Note: For GPU support with `torch` and `faiss`, ensure you install the CUDA versions appropriate for your system.*
-
-## Reproducibility Workflow
-
-The notebooks are numbered to indicate the correct execution order. Please run them in the following sequence:
-
-### 1: Data Preparation (Optional)
-*   `01_dataset_clean_haruhi.ipynb`: Clean the raw Haruhi dataset.
-*   `02_dataset_gen_neutral_train.ipynb`: Generate neutral training sentences.
-
-### 2: Feature Engineering (Optional)
-*   `11_feature_pmi_builder.ipynb`: Extract PMI-based lexical keywords.
-*   `12_feature_style_vector_phase2.ipynb`: Construct style vectors and pragmatic features.
-*   `13_feature_prag_vectors.ipynb`: Build pragmatic style centroids and meta-learner models.
-*   `14_feature_rag_index.ipynb`: Build FAISS indexes for RAG retrieval.
-
-### 3: Model Training (Core)
-*   **Main**: `22_train_sft_main.ipynb` (Train the Qwen-based Style-SFT model).
-*   **DPO Training**: `24_train_dpo_main.ipynb` (Direct Preference Optimization training).
-*   **Data Preparation**: `16_build_dpo_pairs.ipynb` (Build DPO training pairs).
-*   **Baselines**: `23_train_sft_vanilla.ipynb` (Vanilla SFT baseline).
-*   **Evaluator**: `21_train_style_classifier.ipynb` (Train the RoBERTa style classifier).
-
-### 4: Evaluation & Analysis (Required for main results)
-*   `31_eval_gen_neutral.ipynb`: Generate datasets for evaluation.
-*   `32_eval_collect_outputs.ipynb`: Batch inference and collection.
-*   `33_eval_automated.ipynb`: Run automated evaluation metrics.
-*   `34_eval_significance.ipynb`: Statistical significance testing.
-*   `35_ana_syntactic_dim.ipynb`: Analyse syntactic dimensions.
-*   `36_ana_style_extract_frieren.ipynb`: Case study (Frieren).
-*   `38_ablation_style_vectors.ipynb`: Ablation study on style vector components.
-
-## Minimal Reproducion
-
-To reproduce the main quantitative results (Table 5-1, Figure 5.1):
-
-1. Set up the environment (see Environmental Setup)
-2. Download preprocessed data and pretrained evaluators (see Outputs & Models)
-3. Run the following notebooks in order:
-   - 31_eval_gen_neutral.ipynb
-   - 32_eval_collect_outputs.ipynb
-   - 33_eval_automated.ipynb
-   - 34_eval_significance.ipynb
-
-## Notes on Randomness
-
-All experiments use fixed random seeds where applicable.
-Minor numerical differences may occur due to GPU nondeterminism,
-but relative rankings and statistical conclusions should remain stable.
-
-## External Dependencies & Configuration
-
-Some baselines and data generation steps require access to external APIs (e.g., HanLP for parsing, OpenAI/GLM for neutral sentence generation).
-
-Please create a `.env` file in the root directory `OtakuLab/` with the following keys:
-
-```ini
-# API Keys for Data Generation & Baselines
-OPENAI_API_KEY="sk-..."       # Compatible with OpenAI SDK (e.g., DeepSeek, Qwen)
-OPENAI_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
-OPENAI_CHAT_MODEL="glm-4"     # Model name to use for generation (e.g., glm-4, qwen-turbo)
-HANLP_API_KEY="..."           # HanLP Auth Key for PCFG parsing
+```bash
+git clone --branch v2 https://github.com/Moemu/OtakuLab.git
+cd OtakuLab
+conda create -n otakulab python=3.12
+conda activate otakulab
+python -m pip install -r requirements.txt
+python -m pip install jupyterlab hanlp-restful hanlp-common datasets tiktoken
+python -m ipykernel install --user --name otakulab --display-name "OtakuLab"
+python -m jupyterlab
 ```
 
-> **Note**: HanLP is used for constructing syntactic vectors (PCFG). You can obtain a key from [HanLP](https://hanlp.hankcs.com/).
+The supplemental command installs the notebook interface and covers imports not listed directly in `requirements.txt`. See [environment notes](docs/reproduction.md#environment-and-configuration) for CUDA and FlashAttention limitations.
 
-## Data Usage Notice
+Select the `OtakuLab` kernel. Check `Path.cwd()` and input/output constants before execution. Notebook numbers group stages; they do **not** define a single execution order. Most cells expect the repository root, while some analysis notebooks use other root rules.
 
-All datasets are used strictly for academic research.
-Character dialogues are extracted from publicly available fan-transcribed sources.
-No original copyrighted material is redistributed in raw form.
+Copy `.env.example` to `.env` for API-based steps. In PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Set a matching endpoint, model, and key. API generation and judging may incur charges. Saved-result inspection needs no credentials.
+
+## Data and reuse
+
+The repository contains character dialogue text and derived data. The earlier statement that no copyrighted material was redistributed did not account for these files. Source provenance and redistribution terms need a file-level review.
+
+No repository `LICENSE` file was present during this audit. Code, data, model weights, and upstream sources need explicit reuse terms before a broader release. The paper's license does not define repository licensing.
+
+## Citation
+
+```bibtex
+@misc{zhu2026structuredstylerewrite,
+  title = {Structured Style-Rewrite with Chain-of-Thought Planning for Low-Resource Character Dialogue},
+  author = {Chanhui Zhu},
+  year = {2026},
+  eprint = {2603.05933},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  doi = {10.48550/arXiv.2603.05933},
+  url = {https://arxiv.org/abs/2603.05933}
+}
+```
+
+Use the [contribution guide](CONTRIBUTING.md) to report a reproduction issue. Include the Git revision, notebook cells, resource versions, and error details.
