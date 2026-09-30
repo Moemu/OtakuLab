@@ -14,7 +14,7 @@
 
 The first two levels have their core inputs in tracked files. This documentation audit ran the saved-result example and notebook 34's code. It did not validate training, inference, or API services.
 
-The latest training and evaluation inputs are published on `v2`; see the [data snapshot](../data/README.md). These additions were made during double-blind review, which has ended. The paper's data will be updated later. Historical saved outputs and locally expanded outputs must still be distinguished.
+The latest training and evaluation inputs are published on `v2`; see the [data snapshot](../data/README.md). These additions were made during double-blind review, which has ended. The paper's data will be updated later. Paper and review-period expanded results are both published as distinct snapshots; see [experiment provenance](experiment-provenance.md).
 
 ## Inspect saved results
 
@@ -37,9 +37,9 @@ for model, values in metrics.items():
     print("stored VSS:", sum(valid_style) / len(valid_style))
 ```
 
-This summarizes stored scores. The tracked and local metric arrays were checked against the confirmed 0.1 penalty. This does not independently verify published aggregate values or sample pairing.
+This summarizes stored scores. The tracked and local metric arrays were checked against the confirmed 0.1 penalty. Main-system aggregates were compared with the local paper table. Pairing is checked against the matched generation snapshot and per-character arrays; notebook 34 aligns sample keys before testing.
 
-Tracked generations contain 6,000 rows: 150 neutral sentences × eight characters × five systems. At the audited HEAD, the metric object includes a sixth ablation system, with 1,200 entries per system. The modified local metrics contain five systems with 1,840 entries each. Match original inputs before combining snapshots.
+Tracked generations contain 6,000 rows: 150 neutral sentences × eight characters × five systems. At the audited HEAD, the metric object includes a sixth ablation system, with 1,200 entries per system. `outputs/evaluate_result_extra.jsonl` contains five systems with 1,840 entries each. These metrics are an expanded snapshot, not replacements for the paper main table.
 
 For statistics, open [notebook 34](../notebooks/34_eval_significance.ipynb). It compares `Ours(DPO)` against `BaselineA`, `BaselineB`, and `BaselineC` for semantic and valid-style scores. It uses two-sided Wilcoxon tests with Bonferroni correction across six comparisons.
 
@@ -64,6 +64,7 @@ Copy [.env.example](../.env.example) to `.env` for API stages:
 | `OPENAI_API_KEY` | OpenAI-compatible clients |
 | `OPENAI_BASE_URL` | Selected provider endpoint |
 | `OPENAI_CHAT_MODEL` | Most generation and judge sections |
+| `BASELINE_C_MODEL` | Notebook 32 Baseline C; default `glm-4.7` |
 | `NEUTRAL_MODEL` | Notebook 31's neutral generation |
 | `HANLP_API_KEY` | HanLP REST tokenization and constituency parsing |
 
@@ -77,31 +78,39 @@ print(Path.cwd())
 print((Path.cwd() / "data").is_dir())
 ```
 
-Align `/root/OtakuLab`, `/root/autodl-tmp`, `../Models`, and `../Dataset` with your resources. Notebook 24 changes directories unconditionally. Notebook 38 expects a kernel in `notebooks/`; from the repository root, set `OTAKU_ROOT = Path.cwd()`. Notebook 15 searches for a parent containing both `OtakuLab/` and `Models/`.
+Notebooks 21, 32–34, and 36 locate the repository root from their kernel directory. Notebook 32 accepts `QWEN_MODEL_PATH`, `SFT_CHECKPOINT`, `DPO_CHECKPOINT`, and `VANILLA_CHECKPOINT`; defaults use `../Models` and `outputs/model`. Align remaining `/root/autodl-tmp`, `../Models`, and `../Dataset` resources in other sections. Notebook 24 changes directories unconditionally. Notebook 38 expects a kernel in `notebooks/`; from the repository root, set `OTAKU_ROOT = Path.cwd()`. Notebook 15 searches for a parent containing both `OtakuLab/` and `Models/`.
 
 ## Evaluate existing generations
 
 1. Select a fixed test set and matching generations.
 2. Obtain the RoBERTa backbone, classifier checkpoint, label encoder, and BGE model.
 3. In notebook 33, align `BATCH_INFERENCE_FILE`, `NEUTRAL_EVAL_FILE`, `BACKBONE_PATH`, `CHECKPOINT_PATH`, and semantic `MODEL_PATH`.
-4. Use the paper-standard 0.1 VSS penalty below or at the semantic threshold. Review degeneration handling and `USE_HELD_OUT`.
-5. Run scoring sections. Use separate output files to preserve supplied results. Create the figure directory before plotting.
-6. Point notebook 34 at the new metric object. Confirm labels and pairing before testing.
+4. Use the paper-standard 0.1 VSS penalty below or at the semantic threshold. Keep `USE_HELD_OUT=False` for the paper training-split centroids. A missing held-out export stops the optional sensitivity route.
+5. Run scoring sections. Outputs and figures use the selected route directory; supplied snapshots are preserved.
+6. Use the same route in notebook 34. It validates and aligns sample keys before testing.
 
 API judging is an additional section. It is not required to inspect saved classifier/semantic arrays.
 
-### Filename mismatch
+### Shared evaluation route
 
-| Producer or consumer | Local working-tree default |
-| --- | --- |
-| 31 output | `data/neutral_sentences_eval.jsonl` |
-| 32 input | `data/neutral_sentences_eval_extra.jsonl` |
-| 32 output | `outputs/batch_run_result.jsonl` |
-| 33 generation input | `outputs/batch_run_result_extra.jsonl` |
-| 33 neutral input | `data/neutral_sentences_eval_extra.jsonl` |
-| 33 output / 34 input | `outputs/evaluate_result.jsonl` |
+Set `EVALUATION_VARIANT = "paper"` or `"expanded"` in notebooks 32, 33, and 34. All three must use the same selection.
 
-The expanded `data/neutral_sentences_eval_extra.jsonl` is now included and contains 230 sentences. Expanded generations remain local. For the historical 150-sentence route, use `data/neutral_sentences_eval.jsonl` and `outputs/batch_run_result.jsonl` throughout. For the latest expanded input, generate separate matching generation, metric, and figure files.
+| Route | Test set | Saved generations | Saved metrics |
+| --- | --- | --- | --- |
+| `paper` (default) | `data/neutral_sentences_eval.jsonl` | `outputs/batch_run_result.jsonl` | `outputs/evaluate_result.jsonl` |
+| `expanded` | `data/neutral_sentences_eval_extra.jsonl` | `outputs/batch_run_result_extra.jsonl` | `outputs/evaluate_result_extra.jsonl` |
+
+New generation, metric, figure, and API judge files go to `outputs/runs/<route>/`. Notebook 33 uses the current run's generations when present; otherwise it reads the saved snapshot. It prints the chosen source. Notebook 34 uses the generation file bound to the chosen metric file. A partly generated run cannot replace the input to saved-result statistics.
+
+Notebook 32 replaces complete system groups during export; reruns cannot append duplicate pairs. A generation with an error marker stops evaluation. New metrics include sample IDs and hash manifests. Notebook 34 stops if their generation, test, or metric files changed after scoring.
+
+Notebook 31 creates a new test set and can overwrite the supplied base input. Skip it when reproducing either saved snapshot.
+
+Run the lightweight integrity tests from the repository root:
+
+```bash
+python -m unittest discover -s tests -v
+```
 
 ### Metric definitions
 
@@ -130,10 +139,10 @@ The hard-gate definition is not the reported experimental metric. Keep those com
 After aligning paths, use these routes for supplied processed data:
 
 1. Run notebook 22's data sections only when rebuilding training exports. Preserve supplied snapshots by skipping re-export.
-2. Train the evaluator with 21. It depends on 22's data export, despite its lower number.
+2. Train the evaluator with 21. It depends on 22's data export. Keep `CLASSIFIER_SCOPE="paper"` for eight roles. The optional Frieren classifier uses a different directory; held-out export defaults off.
 3. Train SFT with 22. Keep `lora/`, `style_encoder.pt`, and `tokenizer/` together.
 4. Build pairs with 16, then format and train DPO with 24. Align pair filenames and SFT checkpoint. Notebook 24 replaces the rejected `<think>` block with the chosen block.
-5. Build Baseline A retrieval resources with 14. Notebook 23 exports vanilla data; train the baseline separately. Notebook 32 points to a LlamaFactory adapter for this baseline.
+5. Build Baseline A retrieval resources with 14. Notebook 23 exports vanilla data; train the baseline separately. Notebook 32 defaults to `outputs/evaluate/baseline/Vanilla`; override `VANILLA_CHECKPOINT` for an external adapter.
 6. Use the supplied test set. Run 31 only when intentionally creating a different set.
 7. Align artifacts and test inputs in 32. Generate responses, then follow the evaluation route above.
 

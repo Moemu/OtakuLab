@@ -18,7 +18,7 @@ The additions were prepared during double-blind review. That review period has e
 
 **A fresh clone does not yet provide a complete, verified training or inference run.** Generator adapters, the trained style classifier, and RAG indexes have no documented public download location. Notebooks also contain machine-specific paths and different experiment versions. Read the [reproduction guide](docs/reproduction.md) before running cells.
 
-The reported experiments use VSS = style score × (1 if semantic score > 0.75 else 0.1). This is the reproduction standard, confirmed by the maintainer. Hard-gated recalculation scripts are separate sensitivity analyses. Evaluation filenames still need alignment; record the Git revision and test set when comparing results.
+The reported experiments use VSS = style score × (1 if semantic score > 0.75 else 0.1). This is the reproduction standard, confirmed by the maintainer. Hard-gated recalculation scripts are separate sensitivity analyses. Notebooks 32–34 share paper/expanded routes; record the Git revision and test set when comparing results.
 
 ## Choose a starting point
 
@@ -46,7 +46,9 @@ OtakuLab/
 └── CITATION.cff          # Paper citation metadata
 ```
 
-`scripts/` was untracked when these documents were prepared. Its local presence does not guarantee availability in a clone.
+`scripts/evaluation_io.py` provides shared evaluation paths and integrity checks. Local curation scripts remain ignored; see the [artifact audit](docs/local-artifacts.md).
+
+Saved paper and expanded results are published separately. Notebooks 32–34 default to the paper route and write new runs under `outputs/runs/`. See [experiment provenance](docs/experiment-provenance.md).
 
 ## Environment preparation
 

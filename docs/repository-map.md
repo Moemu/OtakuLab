@@ -4,14 +4,14 @@
 
 Checked on 2026-09-30 against tracked paths at `dc1feae` and the working tree. Counts describe that snapshot, not a release manifest.
 
-The subsequent `v2` data publication uses the latest local state after double-blind review. See the [data snapshot](../data/README.md) and [manifest](../data/manifest.json) for the current dataset inventory. Historical outputs and uncommitted notebook changes remain separate.
+The subsequent `v2` data publication uses the latest local state after double-blind review. See the [data snapshot](../data/README.md) and [manifest](../data/manifest.json) for the current dataset inventory. Paper and expanded evaluation snapshots are separate. See the [provenance audit](experiment-provenance.md).
 
 ## Directory responsibilities
 
 | Path | Responsibility | Availability |
 | --- | --- | --- |
 | `data/` | Corpora, neutral sentences, training exports, test inputs | Latest canonical files included, with DPO datasets and expanded evaluation input |
-| `notebooks/` | Experiment definitions | 20 tracked notebooks; four locally modified |
+| `notebooks/` | Experiment definitions | 20 notebooks; five evaluation-related notebooks aligned in this release |
 | `outputs/style/signature/` | Lexical PMI and punctuation signatures | Tracked |
 | `outputs/style/dense/` | Structural vectors and diagnostics | Selected files tracked; constituency caches ignored |
 | `outputs/style/semantic/prag_vectors/` | Character pragmatic labels/scores | Tracked |
@@ -38,13 +38,13 @@ Numbers group stages. Several notebooks contain historical and current sections.
 | [15_nshot_stability](../notebooks/15_nshot_stability.ipynb) | Measure Muice style-vector stability | RAG corpus; features; sibling `OtakuLab/` and `Models/` |
 | [16_build_dpo_pairs](../notebooks/16_build_dpo_pairs.ipynb) | Construct preference pairs | SFT checkpoint; Qwen3; ablation-named output file |
 | [19_feature_pcfg_builder(deprecated)](../notebooks/19_feature_pcfg_builder%28deprecated%29.ipynb) | Historical PCFG extraction | Deprecated; not the current structural-feature entry |
-| [21_train_style_classifier](../notebooks/21_train_style_classifier.ipynb) | Train classifier and export held-out embeddings | Notebook 22's oversampled data export; RoBERTa |
+| [21_train_style_classifier](../notebooks/21_train_style_classifier.ipynb) | Train eight-role classifier; optional separate nine-role and held-out exports | Notebook 22's oversampled data export; RoBERTa |
 | [22_train_sft_main](../notebooks/22_train_sft_main.ipynb) | Build training files; train, export, and load SFT | CoT; features; Qwen3; BGE filtering; different save/load versions |
 | [23_train_sft_vanilla](../notebooks/23_train_sft_vanilla.ipynb) | Export baseline conversations | Data preparation only; no executable training stage |
 | [24_train_dpo_main](../notebooks/24_train_dpo_main.ipynb) | Format CoT-shared pairs; train/export DPO | Pair data; SFT LoRA; TRL; hard-coded remote root |
 | [31_eval_gen_neutral](../notebooks/31_eval_gen_neutral.ipynb) | Generate neutral evaluation sentences | External Haruhi path; API; skip for the supplied fixed test set |
-| [32_eval_collect_outputs](../notebooks/32_eval_collect_outputs.ipynb) | Generate model and baseline responses | Weights; RAG; Baseline C API; local default uses extra test set |
-| [33_eval_automated](../notebooks/33_eval_automated.ipynb) | Detect degeneration, score, plot, and judge | Classifier; RoBERTa; BGE; optional API; extra generations locally |
+| [32_eval_collect_outputs](../notebooks/32_eval_collect_outputs.ipynb) | Generate model and baseline responses | Weights; RAG; Baseline C API; paper/expanded route selection |
+| [33_eval_automated](../notebooks/33_eval_automated.ipynb) | Detect degeneration, score, plot, and judge | Eight-role classifier; BGE; optional API; matching paper/expanded snapshots |
 | [34_eval_significance](../notebooks/34_eval_significance.ipynb) | Paired Wilcoxon tests with Bonferroni correction | Score arrays with matching sample order |
 | [35_ana_syntactic_dim](../notebooks/35_ana_syntactic_dim.ipynb) | Historical 10-D/18-D comparison | Old `dataset/`, `evaluate/outputs/`, and five-role paths |
 | [36_ana_style_extract_frieren](../notebooks/36_ana_style_extract_frieren.ipynb) | Extract held-out style and evaluate rewrites | Frieren data; features; meta-learner; generator and classifier |
@@ -88,7 +88,7 @@ Notebook 16's output does not match notebook 24's default input. Baseline traini
 
 ## Local helpers
 
-These scripts support local experiments; they are not a stable command-line interface.
+The published `scripts/evaluation_io.py` is shared by notebooks 32–34. The curation scripts below remain local and ignored. Their references are recorded in [local-artifacts.md](local-artifacts.md).
 
 | Group | Files | Behavior to check |
 | --- | --- | --- |

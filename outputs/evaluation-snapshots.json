@@ -1,0 +1,159 @@
+{
+  "audit_date": "2026-09-30",
+  "data_publication_revision": "e7f8a39bc5d28062cff00eee0974a6bd2f0430a6",
+  "vss": {
+    "threshold": 0.75,
+    "comparison": ">",
+    "penalty": 0.1
+  },
+  "snapshots": {
+    "paper": {
+      "status": "paper_main_table_historical",
+      "neutral_count": 150,
+      "character_count": 8,
+      "generation_count": 6000,
+      "metric_count_per_main_system": 1200,
+      "files": [
+        {
+          "path": "data/neutral_sentences_eval.jsonl",
+          "bytes": 24202,
+          "sha256": "d1ebe7c616821f3894275decb487510ffa5b0a7ebd320e02347881a870659b4c"
+        },
+        {
+          "path": "outputs/batch_run_result.jsonl",
+          "bytes": 2782070,
+          "sha256": "ffe3eaf3341e93e22f51529ca8bb5393218978d553dc1ecf944443bd32f4610d"
+        },
+        {
+          "path": "outputs/evaluate_result.jsonl",
+          "bytes": 1548384,
+          "sha256": "db49a9704e08d6f3c4e826e26b43e33a2a7ecffccae0345276e00b1fd1b9ffd8"
+        }
+      ],
+      "main_system_means": {
+        "Ours(SFT)": {
+          "semantic": 0.8966459632664919,
+          "style": 0.6555889536089093,
+          "h_score": 0.7189164369332296,
+          "valid_style": 0.6095648788604228
+        },
+        "Ours(DPO)": {
+          "semantic": 0.8773978813240926,
+          "style": 0.7303018905150142,
+          "h_score": 0.7591727860393925,
+          "valid_style": 0.6319487013324708
+        },
+        "BaselineA": {
+          "semantic": 0.7697444588442643,
+          "style": 0.7017034226547907,
+          "h_score": 0.6878991447959288,
+          "valid_style": 0.4068771478053346
+        },
+        "BaselineB": {
+          "semantic": 0.8834302900731563,
+          "style": 0.5797104414780314,
+          "h_score": 0.665628557797674,
+          "valid_style": 0.5368325372392092
+        },
+        "BaselineC": {
+          "semantic": 0.6147311326116324,
+          "style": 0.9582186692588454,
+          "h_score": 0.7395563586682903,
+          "valid_style": 0.1940875663339927
+        }
+      },
+      "legacy_pairing": "Metric index follows matched generation-file order; per-character arrays checked; statistics reorders by character and neutral input.",
+      "metric_snapshot_revision": "e7f8a39bc5d28062cff00eee0974a6bd2f0430a6"
+    },
+    "expanded": {
+      "status": "review_extension_pending_paper_update",
+      "neutral_count": 230,
+      "character_count": 8,
+      "generation_count": 9200,
+      "metric_count_per_main_system": 1840,
+      "files": [
+        {
+          "path": "data/neutral_sentences_eval_extra.jsonl",
+          "bytes": 32128,
+          "sha256": "04198cfd477538b7d1cdded5601d61d53c40fbd9ca09bf66f2feb1df5ee0322e"
+        },
+        {
+          "path": "outputs/batch_run_result_extra.jsonl",
+          "bytes": 4008613,
+          "sha256": "124273029e9987cc078f7eef27f8890a350b749afee0a5e00ff255572a7589b2"
+        },
+        {
+          "path": "outputs/evaluate_result_extra.jsonl",
+          "bytes": 1975385,
+          "sha256": "02e08098588df923554be0887fac3483a4fc1b29a0c0fb53fc74fc639969135d"
+        }
+      ],
+      "main_system_means": {
+        "Ours(SFT)": {
+          "semantic": 0.8981959342470636,
+          "style": 0.6519959059916164,
+          "h_score": 0.7155366695597816,
+          "valid_style": 0.6026710443373003
+        },
+        "Ours(DPO)": {
+          "semantic": 0.8787631457590539,
+          "style": 0.7027532183341366,
+          "h_score": 0.7415044199560127,
+          "valid_style": 0.6079354521579079
+        },
+        "BaselineA": {
+          "semantic": 0.7482188799135063,
+          "style": 0.7178453261058638,
+          "h_score": 0.6874498620163769,
+          "valid_style": 0.38451038079261174
+        },
+        "BaselineB": {
+          "semantic": 0.8242968305621459,
+          "style": 0.6293883710346421,
+          "h_score": 0.6643842230407723,
+          "valid_style": 0.4689956070079376
+        },
+        "BaselineC": {
+          "semantic": 0.6198779492436544,
+          "style": 0.9616061217127259,
+          "h_score": 0.7446886198970022,
+          "valid_style": 0.21940814885337193
+        }
+      },
+      "legacy_pairing": "Metric index follows matched generation-file order; per-character arrays checked; statistics reorders by character and neutral input.",
+      "maintainer_confirmed_model_directories": [
+        "outputs/model/styled-qwen-v4.3-4e-05",
+        "outputs/model/styled-qwen-dpo-v1"
+      ],
+      "unverified_run_provenance": [
+        "exact DPO adapter subdirectory and weight hashes",
+        "classifier and centroid hashes/source",
+        "Baseline C API model identifier for the added 80 inputs"
+      ]
+    }
+  },
+  "paper_sources": [
+    {
+      "path_in_parent": "LaTex/sections/experiments.tex",
+      "sha256": "4ff2866369b41b8d77f8dd34614404f2c4d39155b9d678a88f6ccfa606e9fa74"
+    },
+    {
+      "path_in_parent": "LaTex/sections/appendixes.tex",
+      "sha256": "b0cd75dfd29014ccff5752efcb436aba43aaac9c9f2d4f25e4dd48d0442cc413"
+    },
+    {
+      "path_in_parent": "arXiv/sections/experiments.tex",
+      "sha256": "03562ba4f6fc38f5f6a7076356a3d43df88c438d86d2ff2a10e13b19bf6765c2"
+    },
+    {
+      "path_in_parent": "arXiv/sections/appendixes.tex",
+      "sha256": "6bd6dac9e6619271cf0285ce7c18c5b6d8f6429c9c22b06572c61a829f34ee76"
+    }
+  ],
+  "frieren_review_pragmatics": {
+    "path": "outputs/style/semantic/prag_vectors/frieren_80.jsonl",
+    "rows": 80,
+    "sha256": "02d4a908db7e7e444e98fe80a60a6b55e0168097ebc9351002855d65a11798c2",
+    "first_25_match_paper_pragmatics": true
+  }
+}

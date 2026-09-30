@@ -35,7 +35,7 @@ OtakuLab/
 ├── data/              # 处理后的语料、训练集和评估输入
 ├── notebooks/         # 特征提取、训练、评估和分析
 ├── outputs/           # 已提交的结果、特征，以及本地模型产物
-├── scripts/           # 本地数据整理和指标补算脚本
+├── scripts/           # 评估路径和完整性检查工具
 ├── docs/              # 仓库地图、复现指南和发布前检查
 ├── LaTex/             # 本地图表输出；Git 忽略此目录
 ├── .env.example       # API 配置模板
@@ -44,7 +44,9 @@ OtakuLab/
 └── CITATION.cff       # 论文引用信息
 ```
 
-整理文档时，`scripts/` 尚未提交。全新克隆是否包含这些脚本，取决于后续提交。
+`scripts/evaluation_io.py` 已纳入主评估链路。本地整理脚本保留并忽略，引用核对见[本地文件说明](docs/local-artifacts.md)。
+
+论文结果与评审期扩展结果已分别保存。32～34 号 Notebook 默认使用论文路径，新运行写入 `outputs/runs/`。版本依据见[实验来源核对](docs/experiment-provenance.md)。
 
 ## 环境准备
 

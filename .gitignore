@@ -30,3 +30,33 @@ outputs/style/models/
 *.pkl
 outputs/style/dense/diagnostics/cons/
 LaTex
+
+# New evaluation runs are separate from published snapshots.
+outputs/runs/
+
+# Local curation backups and intermediate artifacts (retained on disk).
+data/frieren_backup_25.jsonl
+data/frieren_new_entries.jsonl
+outputs/all_dialogue.jsonl
+outputs/baseline_c_batch_input.jsonl
+outputs/ep12_28_dialogue.txt
+outputs/evaluate_result_vss_hard.jsonl
+outputs/frieren_candidates_FINAL.txt
+outputs/frieren_candidates_review.txt
+outputs/frieren_candidates_review_v2.txt
+outputs/frieren_candidates_v3.txt
+outputs/frieren_context.txt
+outputs/frieren_mentions.jsonl
+outputs/pragmatic/frieren.jsonl
+scripts/build_candidates.py
+scripts/build_candidates_v2.py
+scripts/build_final_entries.py
+scripts/build_final_review.py
+scripts/curate_v3.py
+scripts/expand_neutral_eval_lccc.py
+scripts/extract_ass_dialogue.py
+scripts/full_vss_pipeline.py
+scripts/make_review_file.py
+scripts/neutralize_lccc_sentences.py
+scripts/recompute_vss.py
+scripts/recompute_vss_150.py
